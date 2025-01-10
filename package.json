@@ -4,7 +4,7 @@
   "description": "data flow diagram preview",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
@@ -14,10 +14,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "dfd.helloWorld",
-        "title": "Hello World"
+        "command": "dfd.previewdfd",
+        "title": "data flow diagram preview"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "dfd.previewdfd",
+          "when": "resourceExtname == '.dfd'"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -28,7 +36,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.0",
+    "@types/vscode": "^1.89.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.3.0",

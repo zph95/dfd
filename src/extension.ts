@@ -2,6 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+
+let dfdTml:vscode.Terminal;
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -13,14 +15,23 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('dfd.helloWorld', () => {
+	const disposable = vscode.commands.registerCommand('dfd.previewdfd', () => {
 		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from dfd!');
+		const editor = vscode.window.activeTextEditor;
+		if(editor){
+			const uri = editor.document.uri;
+			console.log(uri.path);
+			const cmd = 'data-flow-diagram ' + uri.path;
+			if(!dfdTml){
+			 	dfdTml = vscode.window.createTerminal("data-flow-diagram");
+			}
+			dfdTml.sendText(cmd);
+		}
 	});
 
 	context.subscriptions.push(disposable);
 }
+
 
 // This method is called when your extension is deactivated
 export function deactivate() {}
