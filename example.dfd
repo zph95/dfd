@@ -2,6 +2,7 @@ entity	Clock
 entity	Button
 entity	Lamp
 entity	Power Power supply
+entity  example
 control	Timer
 process	Driver
 

@@ -1,37 +1,60 @@
 {
-  "name": "dfd",
-  "displayName": "dfd",
-  "description": "data flow diagram preview",
+  "name": "vscode-dfd-preview",
+  "displayName": "DFD Preview",
+  "description": "A Visual Studio Code extension to preview data flow diagrams from .dfd files.",
   "version": "0.0.1",
+  "publisher": "zeno",
   "engines": {
     "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onOpenTextDocument:.dfd"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "dfd.previewdfd",
-        "title": "data flow diagram preview"
+        "command": "extension.previewDfd",
+        "title": "Preview DFD"
       }
     ],
-    "menus": {
-      "editor/context": [
+    "languages": [
         {
-          "command": "dfd.previewdfd",
-          "when": "resourceExtname == '.dfd'"
+            "id": "dfd",
+            "extensions": [".dfd"],
+            "aliases": ["DFD"]
         }
+    ],
+    "menus": {
+    "editor/title": [
+      {
+        "command": "extension.previewDfd",
+        "when": "resourceExtname == .dfd",
+        "group": "navigation"
+      }
       ]
+    },
+    "configuration": {
+    "type": "object",
+    "title": "DFD Preview Settings",
+    "properties": {
+      "dfd.commandPath": {
+        "type": "string",
+        "default": "data-flow-diagram",
+        "description": "Path to the data-flow-diagram command."
+      }
     }
+  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
+    "postinstall": "node ./node_modules/vscode/bin/install",
     "lint": "eslint src",
     "test": "vscode-test"
   },
