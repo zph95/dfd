@@ -10,7 +10,9 @@ data-flow-diagram is a python command about generate data flow diagram from code
 - Generates an SVG file from the `.dfd` file using the command `data-flow-diagram <file-path>`.
 - Displays the generated SVG in a webview panel.
 
-Dependence
+![dfd-preview structure](dfd-preview.svg)
+
+## Dependence
 
 1. Install the [data-flow-diagram](https://github.com/pbauermeister/dfd) tool. You can install it globally using `pip`:
 
@@ -52,6 +54,11 @@ If you installed it in a virtual environment or a specific directory, provide th
   "dfd.commandPath": "/home/user/.local/bin/data-flow-diagram"
 }
 ```
+## Usage
+
+1. Open a `.dfd` file in the editor.
+2. Click the "Preview" button that appears in the editor toolbar.
+3. The SVG representation of the data flow diagram will be displayed in a new panel.
 
 ---
 
@@ -83,12 +90,6 @@ If you installed it in a virtual environment or a specific directory, provide th
    ```
 4. Open the project in Visual Studio Code.
 5. Press `F5` to run the extension in a new Extension Development Host window.
-
-## Usage
-
-1. Open a `.dfd` file in the editor.
-2. Click the "Preview" button that appears in the editor toolbar.
-3. The SVG representation of the data flow diagram will be displayed in a new panel.
 
 ## Contributing
 

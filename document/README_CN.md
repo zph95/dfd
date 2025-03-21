@@ -15,3 +15,26 @@ DFD图由以下几个核心元素组成：
 通过连接进程、数据流、数据存储和外部实体，DFD图展示了数据的流动路径和处理过程，帮助分析人员和设计人员理解系统的功能和数据交互。
 
 DFD图一般分为多个层次，从顶层开始，逐步展开细化。顶层DFD图显示系统的整体概览，随着层次的深入，DFD图逐渐展示了更详细的数据流程和处理过程。
+
+## example
+
+![example](example.svg)
+
+```dfd
+entity	Clock
+entity	Button
+entity	Lamp
+entity	Power Power supply
+control	Timer
+process	Driver
+
+Driver  <:: Button	switch on
+Timer   <:: Button	reset
+
+Timer	::> Driver	switch off
+Clock	::> Timer	tick
+
+Driver	--> Lamp	voltage
+Power	->> Driver	voltage
+```
+

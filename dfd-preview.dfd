@@ -1,0 +1,21 @@
+process	data-flow-diagram
+process	python3
+process	Graphviz
+entity  dfdFile
+entity  svgFile
+control	vscode
+control	shell
+process dfd-preview
+process webview
+
+dfdFile --> dfd-preview
+dfd-preview --> svgFile
+svgFile --> webview
+
+vscode ::> dfd-preview
+vscode ::> webview
+
+dfd-preview ::> shell
+shell --> data-flow-diagram
+data-flow-diagram --> python3
+data-flow-diagram --> Graphviz
