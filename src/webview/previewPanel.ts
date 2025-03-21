@@ -14,8 +14,8 @@ export class PreviewPanel {
 
   public static createOrShow(extensionUri: vscode.Uri, svgPath: string) {
      // 始终在右侧 (ViewColumn.Two) 打开
-     const column = vscode.ViewColumn.Two;
-     
+    const column = vscode.ViewColumn.Two;
+    
     // 如果面板已存在，则直接显示
     if (PreviewPanel.currentPanel) {
       PreviewPanel.currentPanel.update(svgPath);
@@ -33,6 +33,9 @@ export class PreviewPanel {
         localResourceRoots: [vscode.Uri.file(path.dirname(svgPath))],
       }
     );
+    panel.onDidDispose(() => {
+      PreviewPanel.currentPanel = undefined;
+    });
 
     PreviewPanel.currentPanel = new PreviewPanel(panel, extensionUri);
     PreviewPanel.currentPanel.update(svgPath);

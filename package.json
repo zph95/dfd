@@ -1,9 +1,14 @@
 {
   "name": "vscode-dfd-preview",
   "displayName": "DFD Preview",
-  "description": "A Visual Studio Code extension to preview data flow diagrams from .dfd files.",
-  "version": "0.0.1",
-  "publisher": "zeno",
+  "description": "A Visual Studio Code extension to preview data flow diagrams from txt files.",
+  "version": "0.0.2",
+  "publisher": "dfd-priview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zph95/dfd.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.89.0"
   },
