@@ -7,7 +7,7 @@
             "name": "comment.line.number-sign.dfd"
         },
         {
-            "match": "\\b(process|store|flow|external|entity|control)\\b",
+            "match": "^\\s*(process|store|flow|external|entity|control)\\s+",
             "name": "keyword.control.dfd"
         },
         {
@@ -21,10 +21,6 @@
         {
             "match": "\\b(==|!=|<=|>=|<|>)\\b",
             "name": "keyword.operator.comparison.dfd"
-        },
-        {
-            "match": "\\b(\\+|\\-|\\*|/|%)\\b",
-            "name": "keyword.operator.arithmetic.dfd"
         },
         {
             "match": "\\b(true|false)\\b",

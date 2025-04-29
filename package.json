@@ -27,59 +27,63 @@
       }
     ],
     "languages": [
-        {
-            "id": "dfd",
-            "extensions": [".dfd"],
-            "aliases": ["DFD"],
-            "configuration": "./language-configuration.json"
-        }
+      {
+        "id": "dfd",
+        "extensions": [
+          ".dfd"
+        ],
+        "aliases": [
+          "DFD"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
     "grammars": [
-            {
-                "language": "dfd",
-                "scopeName": "source.dfd",
-                "path": "./syntaxes/dfd.tmLanguage.json"
-            }
-        ],
-    "menus": {
-    "editor/title": [
       {
-        "command": "extension.previewDfd",
-        "when": "resourceExtname == .dfd",
-        "group": "navigation"
+        "language": "dfd",
+        "scopeName": "source.dfd",
+        "path": "./syntaxes/dfd.tmLanguage.json"
       }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.previewDfd",
+          "when": "resourceExtname == .dfd",
+          "group": "navigation"
+        }
       ]
     },
     "configuration": {
-    "type": "object",
-    "title": "DFD Preview Settings",
-    "properties": {
-      "dfd.commandPath": {
-        "type": "string",
-        "default": "data-flow-diagram",
-        "description": "Path to the data-flow-diagram command."
+      "type": "object",
+      "title": "DFD Preview Settings",
+      "properties": {
+        "dfd.commandPath": {
+          "type": "string",
+          "default": "data-flow-diagram",
+          "description": "Path to the data-flow-diagram command."
+        }
       }
     }
-  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "lint": "eslint src",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.89.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/vscode": "^1.89.0",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@typescript-eslint/parser": "^8.3.0",
-    "eslint": "^9.9.1",
-    "typescript": "^5.5.4",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.8.3"
   }
 }

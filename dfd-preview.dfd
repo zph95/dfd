@@ -4,7 +4,7 @@ process	Graphviz
 entity  dfdFile
 entity  svgFile
 control	vscode
-control	shell
+process	shell
 process dfd-preview
 process webview
 
