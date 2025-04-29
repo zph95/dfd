@@ -13,7 +13,7 @@
     "vscode": "^1.89.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [
     "onOpenTextDocument:.dfd"
@@ -30,9 +30,17 @@
         {
             "id": "dfd",
             "extensions": [".dfd"],
-            "aliases": ["DFD"]
+            "aliases": ["DFD"],
+            "configuration": "./language-configuration.json"
         }
     ],
+    "grammars": [
+            {
+                "language": "dfd",
+                "scopeName": "source.dfd",
+                "path": "./syntaxes/dfd.tmLanguage.json"
+            }
+        ],
     "menus": {
     "editor/title": [
       {

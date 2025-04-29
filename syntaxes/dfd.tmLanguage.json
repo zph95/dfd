@@ -1,0 +1,54 @@
+{
+    "name": "DFD",
+    "scopeName": "source.dfd",
+    "patterns": [
+        {
+            "match": "^#.*$",
+            "name": "comment.line.number-sign.dfd"
+        },
+        {
+            "match": "\\b(process|store|flow|external|entity|control)\\b",
+            "name": "keyword.control.dfd"
+        },
+        {
+            "match": "\\b(if|else|endif|while|endwhile|for|endfor)\\b",
+            "name": "keyword.control.dfd"
+        },
+        {
+            "match": "\\b(and|or|not)\\b",
+            "name": "keyword.operator.logical.dfd"
+        },
+        {
+            "match": "\\b(==|!=|<=|>=|<|>)\\b",
+            "name": "keyword.operator.comparison.dfd"
+        },
+        {
+            "match": "\\b(\\+|\\-|\\*|/|%)\\b",
+            "name": "keyword.operator.arithmetic.dfd"
+        },
+        {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.boolean.dfd"
+        },
+        {
+            "match": "\\b\\d+\\b",
+            "name": "constant.numeric.dfd"
+        },
+        {
+            "match": "\"[^\"]*\"",
+            "name": "string.quoted.double.dfd"
+        },
+        {
+            "match": "'[^']*'",
+            "name": "string.quoted.single.dfd"
+        },
+        {
+            "match": "-->",
+            "name": "keyword.operator.arrow.dfd"
+        },
+        {
+            "match": "::>",
+            "name": "keyword.operator.arrow.dfd"
+        }
+    ]
+}

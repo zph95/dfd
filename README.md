@@ -14,12 +14,18 @@ data-flow-diagram is a python command about generate data flow diagram from code
 
 ## Dependence
 
-1. Install the [data-flow-diagram](https://github.com/pbauermeister/dfd) tool. You can install it globally using `pip`:
+1. Install the [data-flow-diagram](https://github.com/pbauermeister/dfd) tool. You can install it globally using `pip` or `pip3`:
 
    ```bash
-   pip install data-flow-diagram
+   pip3 install data-flow-diagram
    ```
-2. Configure the command path in your VS Code `settings.json` file. Add the following configuration:
+2. the data-flow-diagram need to install graphviz. You can install it globally using `apt` or `yum`.
+
+   ```bash
+   apt install graphviz
+   ```
+
+3. Configure the command path in your VS Code `settings.json` file. Add the following configuration:
 
    ```json
    {
